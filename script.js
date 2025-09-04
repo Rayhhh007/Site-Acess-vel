@@ -16,9 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
 document.body.style.fontSize = \${tamanhoAtualFonte}rem``
 
  })
-const botaoDeAcessibilidade =document.getElementById('botaoacessibilidade');const opcoesDeAcessibilidade =
-document.getElementById('opcoesacessibilidade');
- 
+})
+ const botaoDeAcessibilidade = document.getElementById('botaoacessibilidade');
+ const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+ botaoDeAcessibilidade.addEventListener('click', function () {
+ botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+ opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
+ const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+ botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
+ })
+ alternaContraste.addEventListener('click', function () {
+ document.body.classList.toggle('alto-contraste');
+ });
+  const botaoDeAcessibilidade =document.getElementById('botaoacessibilidade');const opcoesDeAcessibilidade =
  botaoDeAcessibilidade.addEventListener('click', () => {
  botaoDeAcessibilidade.classList.toggle('rotacao-botao');
  opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
